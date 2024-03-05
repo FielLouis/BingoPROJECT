@@ -30,10 +30,8 @@ public class BingoGame implements Runnable {
         Thread[] checkerPlus = new Thread[cnt];
         Thread[] checkerHash = new Thread[cnt];
         for(int i = 0; i < cnt; i++) {
-            for(int j = 1; j <= 5; j++) {
-                checkerPlus[i] = new Thread(new BingoPatternPlus(cards.get(i)));
-                checkerPlus[i].start();
-            }
+            checkerPlus[i] = new Thread(new BingoPatternPlus(cards.get(i)));
+            checkerPlus[i].start();
         }
 //        Thread[] checkerRowThrds = new Thread[cnt];
 //        Thread[] checkerColThrds = new Thread[cnt];
